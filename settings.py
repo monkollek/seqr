@@ -235,11 +235,16 @@ WSGI_APPLICATION = 'wsgi.application'
 WHITENOISE_ALLOW_ALL_ORIGINS = False
 
 # Email settings
-EMAIL_BACKEND = "anymail.backends.postmark.EmailBackend"
-DEFAULT_FROM_EMAIL = "seqr@broadinstitute.org"
+#EMAIL_BACKEND = "anymail.backends.postmark.EmailBackend"
+#DEFAULT_FROM_EMAIL = "seqr@broadinstitute.org"
+
+EMAIL_BACKEND = "anymail.backends.mailjet.EmailBackend"
+DEFAULT_FROM_EMAIL = "seqr_implementation-dl@enders.tch.harvard.edu"
 
 ANYMAIL = {
-    "POSTMARK_SERVER_TOKEN": os.environ.get('POSTMARK_SERVER_TOKEN', 'postmark-server-token-placeholder'),
+    #"POSTMARK_SERVER_TOKEN": os.environ.get('POSTMARK_SERVER_TOKEN', 'postmark-server-token-placeholder'),
+    "MAILJET_API_KEY": "9a5293f00b61a2a48bee9087adba4e2d",
+    "MAILJET_SECRET_KEY": "630d756104f85faa0b7da37039273a3d",
 }
 
 TEMPLATE_DIRS = [
@@ -346,9 +351,9 @@ REDIS_SERVICE_HOSTNAME = os.environ.get('REDIS_SERVICE_HOSTNAME', 'localhost')
 REDIS_SERVICE_PORT = int(os.environ.get('REDIS_SERVICE_PORT', '6379'))
 
 # Matchmaker
-MME_DEFAULT_CONTACT_NAME = 'Samantha Baxter'
-MME_DEFAULT_CONTACT_INSTITUTION = 'Broad Center for Mendelian Genomics'
-MME_DEFAULT_CONTACT_EMAIL = 'matchmaker@broadinstitute.org'
+MME_DEFAULT_CONTACT_NAME = 'Shira Rockowitz'
+MME_DEFAULT_CONTACT_INSTITUTION = 'Boston Childrens Hospital'
+MME_DEFAULT_CONTACT_EMAIL = 'bch_seqr_mme-dl@enders.tch.harvard.edu'
 MME_DEFAULT_CONTACT_HREF = 'mailto:{}'.format(MME_DEFAULT_CONTACT_EMAIL)
 
 MME_CONFIG_DIR = os.environ.get('MME_CONFIG_DIR', '')

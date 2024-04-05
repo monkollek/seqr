@@ -19,5 +19,6 @@ pedigree_images/*
 seqr_settings
 
 static/*
+settings.py
 
 django_key
