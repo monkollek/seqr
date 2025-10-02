@@ -63,7 +63,7 @@ const BaseVariantSearchResultsContent = React.memo(({
         {additionalDisplayEdit}
         <SearchDisplayForm formLocation="Top" match={match} searchOnSubmit {...props} />
         <HorizontalSpacer width={10} />
-        {searchedVariantExportConfig && <ExportTableButton downloads={searchedVariantExportConfig} buttonText="Download" disabled={totalVariantsCount > 1000} />}
+        {searchedVariantExportConfig && <ExportTableButton downloads={searchedVariantExportConfig} buttonText="Download" />}
         <HorizontalSpacer width={10} />
         <GeneBreakdown searchHash={searchHash} />
       </Grid.Column>
